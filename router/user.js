@@ -3,7 +3,8 @@ const Controller = require('../controllers/crudController')
 const router = express.Router()
 
 
-
+router.get('/formAdd', Controller.formAdd)
+router.post('/formAdd', Controller.formCreate)
 router.get('/formAddPatient', Controller.formAddPatient)
 router.post('/formAddPatient', Controller.formCreatePatient)
 // router.get('/edit/:id', Controller.editFormAdmin)
