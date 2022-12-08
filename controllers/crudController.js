@@ -50,7 +50,9 @@ class Controller {
     }
 
     static formCreatePatient(req, res) {
+
         const { userName, email, password, role, name, age, location, gender } = req.body
+
         User.create({ userName, email, password, role })
             .then((data) => {
                 let UserId = data.id
