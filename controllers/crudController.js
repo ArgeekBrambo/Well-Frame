@@ -54,7 +54,7 @@ class Controller {
     }
 
     static formCreatePatient(req, res) {
-        // console.log(req.body,'<<<< req BODY');
+        // console.log(req.body,'<<<< req BODY'); wefewfef
         const { userName, email, password, role, name, age, location, gender, DoctorId, status } = req.body
         User.create({ userName, email, password, role })
         .then((data) => {
