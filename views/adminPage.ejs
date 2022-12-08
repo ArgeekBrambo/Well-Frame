@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/navbar') %> <br><br><br>
+    <h2>Hi <%= dataUser.Profile.name %></h2>
+    <button><a href="/user/formAdd">Add new Doctor here</a></button>
+    <h2>Patient List</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        <% dataPasien.forEach(el=> { %>
+            <tr>
+                <td>
+                    <%= el.name %>
+                </td>
+                <td>
+                    <%= el.age %>
+                </td>
+                <td>
+                    <%= el.location %>
+                </td>
+                <td>
+                    <%= el.gender %>
+                </td>
+                <td>
+                    <form >
+                        <button><a href="/admin/detail/<%=el.id%>">Detail Account</a></button>
+                        <button type="submit"><a href="/admin/delete/<%=el.UserId%>">Delete Account</a></button>
+                        <button><a href="/admin/addNewDisease/<%=el.id%>">Add a new Disease</a></button>
+
+
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>
